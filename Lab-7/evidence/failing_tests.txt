@@ -1,0 +1,27 @@
+...F.............................                                        [100%]
+=================================== FAILURES ===================================
+___________ test_assessment_is_deterministic_and_has_required_fields ___________
+work/lab7_baseline/test_processor.py:47: in test_assessment_is_deterministic_and_has_required_fields
+    income=st.floats(min_value=1, max_value=100000, allow_nan=False, allow_infinity=False),
+               ^^^
+work/lab7_baseline/test_processor.py:55: in test_assessment_is_deterministic_and_has_required_fields
+    result = assess_loan_eligibility(income, debt, principal, rate, term, score)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work/lab7_baseline/processor.py:89: in assess_loan_eligibility
+    payment = calculate_monthly_payment(principal, annual_interest_rate, term_years)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+work/lab7_baseline/processor.py:57: in calculate_monthly_payment
+    payment = amount * monthly_rate * growth / (growth - 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   ZeroDivisionError: float division by zero
+E   Failing test case: test_assessment_is_deterministic_and_has_required_fields(
+E       income=1.0,
+E       debt=0.0,
+E       principal=1.0,
+E       rate=4.122973537880911e-121,
+E       term=1,
+E       score=300,
+E   )
+=========================== short test summary info ============================
+FAILED work/lab7_baseline/test_processor.py::test_assessment_is_deterministic_and_has_required_fields
+1 failed, 32 passed in 0.16s

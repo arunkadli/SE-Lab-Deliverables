@@ -1,0 +1,5 @@
+Loan eligibility demo
+Eligible: No
+Monthly payment: ₹1956.61
+Debt-to-income ratio: 49.13%
+Reasons: debt-to-income ratio is above 40%
